@@ -1,0 +1,19 @@
+﻿@model IEnumerable<DressStore.Models.Product>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Форма добавления продукта</h2>
+<form data-bind="submit: submitHandler" method="post" action="/Home/Index">
+    <p>Введите название продукта: </p>
+    <p><input data-bind="textInput: productName" name="Name" />
+    <span data-bind="text: uncorrectName"></span></p>
+    <p>Введите стоимость продукта:</p>
+    <p><input data-bind="textInput: productPrice" name="Price" />
+    <span data-bind="text: uncorrectPrice"></span></p>
+    <button type="submit">Отправить</button>
+</form>
+<script src="~/Scripts/knockout-3.5.0rc2.js"></script>
+<!--<script src="~/Scripts/Hello.js"></script>-->
+<script src="~/Scripts/inputCheck.js"></script>
